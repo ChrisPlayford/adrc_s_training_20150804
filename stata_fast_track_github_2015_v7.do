@@ -50,4 +50,26 @@ codebook, compact
 save "A:\ADRC_S\Training\GitHub\adrc_s_training_20150804\adrc_s_training_data4.dta", replace
 clear
 
+***
+
+* Analysis of working hours and age
+
+use "A:\ADRC_S\Training\2015 05 Stata Training\adrc_s_training_data4.dta", clear
+
+* a simple correlation *
+
+tab workhours
+
+tab age 
+
+* plotting the relationship *
+
+graph twoway (scatter workhours age, jitter(8) msymbol(triangle))  
+
+* Pearson's r *
+
+cor workhours age
+
+clear
+
 * EOF
